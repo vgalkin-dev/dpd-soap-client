@@ -1,0 +1,16 @@
+{
+  "name": "usend/usend-delivery-dpd",
+  "description": "Soap-клиент для работы с dpd",
+  "type": "library",
+  "license": "proprietary",
+
+  "require-dev": {
+    "phpunit/phpunit": "^6.0"
+  },
+
+  "autoload": {
+    "psr-4": {
+      "Usend\\Delivery\\Dpd\\": "src"
+    }
+  }
+}
