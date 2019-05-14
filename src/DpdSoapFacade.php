@@ -1,8 +1,17 @@
-<?php namespace Usend\Delivery\Dpd;
+<?php namespace Vgalkin\Dpd;
 
 
+/**
+ *
+ */
 class DpdSoapFacade
 {
+
+    /**
+     * Режми работы - тестовый/боевой сервер
+     */
+    protected $testMode;
+
     /**
      *
      */
@@ -27,10 +36,7 @@ class DpdSoapFacade
      */
     public function __construct($testMode)
     {
-        // Создаём разные soap-клиенты для вызова разных soap-методов по разным url
-        foreach ($this->urls as $urlPart) {
-            $this->collection[$urlPart] = new DpdSoapClient(sprintf($this->resolveWsdl($this->wdsl, $testMode), $urlPart));
-        }
+        $this->testMode = $testMode;
     }
 
 
@@ -43,9 +49,15 @@ class DpdSoapFacade
      */
     public function call(string $url, string $method, array $params, string $wrap): \stdClass
     {
-        /** @var $client DpdSoapClient */
         $method = strtolower($method);
-        $url = strtolower($url);
+        $url    = strtolower($url);
+
+        // создать soap-обработчик для указанного url
+        if(! in_array($url, $this->collection)) {
+            $this->collection[$url] = new DpdSoapClient(sprintf($this->resolveWsdl($this->wdsl, $this->testMode), $url));
+        }
+
+        /** @var $client DpdSoapClient */
         $client = $this->collection[$url];
         return $client->call($method, $params, $wrap);
     }

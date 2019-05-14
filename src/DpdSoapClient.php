@@ -1,4 +1,4 @@
-<?php namespace Usend\Delivery\Dpd;
+<?php namespace Vgalkin\Dpd;
 
 
 class DpdSoapClient extends \SoapClient
