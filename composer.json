@@ -1,5 +1,5 @@
 {
-  "name": "usend/usend-delivery-dpd",
+  "name": "vgalkin-dev/usend-delivery-dpd",
   "description": "Soap-клиент для работы с dpd",
   "type": "library",
   "license": "proprietary",
