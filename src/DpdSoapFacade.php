@@ -1,6 +1,4 @@
-<?php
-
-namespace Usend\Delivery\Dpd;
+<?php namespace Usend\Delivery\Dpd;
 
 
 class DpdSoapFacade
