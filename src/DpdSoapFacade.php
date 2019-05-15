@@ -22,7 +22,8 @@ class DpdSoapFacade
      */
     protected $urls = [
         'order2', // url для заказов
-        'label-print' // url для этикеток и наклеек
+        'label-print', // url для этикеток и наклеек
+        'tracing' // статусы посылок
     ];
 
     /**
