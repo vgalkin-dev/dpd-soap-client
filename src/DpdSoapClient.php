@@ -24,9 +24,9 @@ class DpdSoapClient extends \SoapClient
      * @param string $method
      * @param array  $params
      * @param string $wrap
-     * @return mixed|string
+     * @return mixed
      */
-    public function call(string $method, array $params, string $wrap): \stdClass
+    public function call(string $method, array $params, string $wrap)
     {
         // перевести ключи запроса в camelCase
         $params = $this->convertDataForService($params);

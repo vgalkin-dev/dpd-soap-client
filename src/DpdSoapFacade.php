@@ -46,9 +46,9 @@ class DpdSoapFacade
      * @param string $method
      * @param array  $params
      * @param string $wrap
-     * @return \stdClass
+     * @return mixed
      */
-    public function call(string $url, string $method, array $params, string $wrap): \stdClass
+    public function call(string $url, string $method, array $params, string $wrap)
     {
         $method = strtolower($method);
         $url    = strtolower($url);
