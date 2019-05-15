@@ -8,6 +8,7 @@ class DpdSoapClient extends \SoapClient
      */
     protected $soapOptions = [
         'connection_timeout' => 20,
+        'exceptions'         => 0
     ];
 
     /**
