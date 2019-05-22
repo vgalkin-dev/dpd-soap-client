@@ -8,7 +8,7 @@ class DpdSoapClient extends \SoapClient
      */
     protected $soapOptions = [
         'connection_timeout' => 20,
-        'exceptions'         => 0
+        'exceptions'         => true
     ];
 
     /**
@@ -25,8 +25,9 @@ class DpdSoapClient extends \SoapClient
      * @param array  $params
      * @param string $wrap
      * @return mixed
+     * @throws \Exception - soap-сервер сгенерит свои исключения
      */
-    public function call(string $method, array $params, string $wrap)
+    public function call(string $method, array $params, string $wrap) :\StdClass
     {
         // перевести ключи запроса в camelCase
         $params = $this->convertDataForService($params);

@@ -47,8 +47,9 @@ class DpdSoapFacade
      * @param array  $params
      * @param string $wrap
      * @return mixed
+     * @throws \Exception - soap-сервер сгенерит свои исключения
      */
-    public function call(string $url, string $method, array $params, string $wrap)
+    public function call(string $url, string $method, array $params, string $wrap) :\StdClass
     {
         $method = strtolower($method);
         $url    = strtolower($url);
