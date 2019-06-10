@@ -24,7 +24,7 @@ class DpdSoapFacade
         'order2', // url для заказов
         'label-print', // url для этикеток и наклеек
         'tracing', // статусы посылок
-        'geography' // пвз
+        'geography2' // пвз
     ];
 
     /**
