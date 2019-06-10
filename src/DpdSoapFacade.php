@@ -23,11 +23,12 @@ class DpdSoapFacade
     protected $urls = [
         'order2', // url для заказов
         'label-print', // url для этикеток и наклеек
-        'tracing' // статусы посылок
+        'tracing', // статусы посылок
+        'geography' // пвз
     ];
 
     /**
-     * DpdSoapClient[] Хранит коллекцию клиентов
+     * DpdSoapClient[] Хранит коллекцию soap-клиентов для каждого wsdl-usl из $this->urls
      */
     protected $collection = [];
 

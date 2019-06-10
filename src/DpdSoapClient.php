@@ -1,6 +1,9 @@
 <?php namespace Vgalkin\Dpd;
 
 
+/**
+ *
+ */
 class DpdSoapClient extends \SoapClient
 {
     /**
